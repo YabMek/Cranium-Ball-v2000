@@ -133,9 +133,6 @@ GameObject:
   - component: {fileID: 225567774}
   - component: {fileID: 225567771}
   - component: {fileID: 225567775}
-  - component: {fileID: 225567779}
-  - component: {fileID: 225567778}
-  - component: {fileID: 225567777}
   - component: {fileID: 225567776}
   m_Layer: 0
   m_Name: ZeroFullBody
@@ -224,7 +221,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 51.24, y: 71.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1693768749}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -283,53 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabbed: 0
-  distance: 2
-  holdpoint: {fileID: 0}
---- !u!114 &225567777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225567770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46071cc0ca4dbe543ae47d6952b2c48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabbed: 0
-  distance: 2
-  holdpoint: {fileID: 0}
---- !u!114 &225567778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225567770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46071cc0ca4dbe543ae47d6952b2c48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabbed: 0
-  distance: 2
-  holdpoint: {fileID: 0}
---- !u!114 &225567779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225567770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46071cc0ca4dbe543ae47d6952b2c48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabbed: 0
-  distance: 2
-  holdpoint: {fileID: 0}
+  distance: -2
+  holdpoint: {fileID: 1693768749}
+  throwforce: 100
 --- !u!1 &509378856
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +381,7 @@ GameObject:
   - component: {fileID: 565049031}
   m_Layer: 0
   m_Name: JiaoStaff
-  m_TagString: grabable
+  m_TagString: grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755615351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.97, y: -0.18, z: 0}
+  m_LocalPosition: {x: 0.92, y: -1.3, z: 0}
   m_LocalScale: {x: 2.6861935, y: 2.6861935, z: 2.6861935}
   m_Children: []
   m_Father: {fileID: 1735338042}
@@ -775,7 +729,7 @@ GameObject:
   - component: {fileID: 1198755291}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -903,10 +857,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1266252292}
   - component: {fileID: 1266252293}
+  - component: {fileID: 1266252295}
   - component: {fileID: 1266252294}
   m_Layer: 0
   m_Name: IcePick
-  m_TagString: grabable
+  m_TagString: grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1000,6 +955,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.2}
   m_EdgeRadius: 0
+--- !u!50 &1266252295
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266252291}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!1 &1693768748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1693768749}
+  m_Layer: 0
+  m_Name: Hold point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1693768749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693768748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.11, y: -0.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 225567773}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735338039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735338039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.33, y: 71.81, z: 0}
+  m_LocalPosition: {x: 42.7, y: 72.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 755615352}
@@ -1190,6 +1196,7 @@ MonoBehaviour:
   grabbed: 0
   distance: 1.5
   holdpoint: {fileID: 755615352}
+  throwforce: 100
 --- !u!1 &1855379492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,6 +1376,7 @@ MonoBehaviour:
   grabbed: 0
   distance: 2
   holdpoint: {fileID: 0}
+  throwforce: 0
 --- !u!114 &1855379499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,6 +1392,7 @@ MonoBehaviour:
   grabbed: 0
   distance: 2
   holdpoint: {fileID: 0}
+  throwforce: 0
 --- !u!114 &1855379500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,3 +1408,4 @@ MonoBehaviour:
   grabbed: 0
   distance: 2
   holdpoint: {fileID: 0}
+  throwforce: 0
