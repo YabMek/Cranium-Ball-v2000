@@ -6,10 +6,7 @@ TagManager:
   tags:
   - Ground
   - Ball
-<<<<<<< HEAD
   - grabbable
-=======
->>>>>>> 98fc784e1614150fd744318ac77b1d500ea9ec75
   layers:
   - Default
   - TransparentFX
