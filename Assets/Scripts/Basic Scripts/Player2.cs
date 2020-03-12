@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
-    public Animator animator;
-
     private Rigidbody2D rigidBody;
     public static GameObject character;
 
@@ -65,24 +63,18 @@ public class Player2 : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                rigidBody.velocity = new Vector2(10, rigidBody.velocity.y);
-            }
-            else
-            {
-                rigidBody.velocity = new Vector2(5, rigidBody.velocity.y);
+            if(Input.GetKey(KeyCode.Space)) {
+               rigidBody.velocity = new Vector2(10, rigidBody.velocity.y);
+            } else {
+               rigidBody.velocity = new Vector2(5, rigidBody.velocity.y); 
             }
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                rigidBody.velocity = new Vector2(-10, rigidBody.velocity.y);
-            }
-            else
-            {
-                rigidBody.velocity = new Vector2(-5, rigidBody.velocity.y);
+            if(Input.GetKey(KeyCode.Space)) {
+               rigidBody.velocity = new Vector2(-10, rigidBody.velocity.y);
+            } else {
+               rigidBody.velocity = new Vector2(-5, rigidBody.velocity.y); 
             }
         }
         else
