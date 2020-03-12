@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
-    public Animator animator;
-
     private Rigidbody2D rigidBody;
     public static GameObject character;
 
@@ -33,48 +31,29 @@ public class Player2 : MonoBehaviour
         HandleMovement();
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 0.1f);
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            rigidBody.AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
-        }
-        else
-        {
-            rigidBody.AddForce(new Vector2(0, 0), ForceMode2D.Impulse);
-        }
-
-        if (Input.GetKey(KeyCode.J))
-        {
-            animator.SetBool("Wack", true);
-    
-        }
-        else
-        {
-            animator.SetBool("Wack", false);
-        }
+        if (Input.GetKeyDown(KeyCode.W)) {
+                 rigidBody.AddForce(new Vector2(0, 30), ForceMode2D.Impulse);
+       } else {
+          rigidBody.AddForce(new Vector2(0, 0), ForceMode2D.Impulse); 
+       }
     }
 
     private void HandleMovement()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                rigidBody.velocity = new Vector2(10, rigidBody.velocity.y);
-            }
-            else
-            {
-                rigidBody.velocity = new Vector2(5, rigidBody.velocity.y);
+            if(Input.GetKey(KeyCode.Space)) {
+               rigidBody.velocity = new Vector2(10, rigidBody.velocity.y);
+            } else {
+               rigidBody.velocity = new Vector2(5, rigidBody.velocity.y); 
             }
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                rigidBody.velocity = new Vector2(-10, rigidBody.velocity.y);
-            }
-            else
-            {
-                rigidBody.velocity = new Vector2(-5, rigidBody.velocity.y);
+            if(Input.GetKey(KeyCode.Space)) {
+               rigidBody.velocity = new Vector2(-10, rigidBody.velocity.y);
+            } else {
+               rigidBody.velocity = new Vector2(-5, rigidBody.velocity.y); 
             }
         }
         else
