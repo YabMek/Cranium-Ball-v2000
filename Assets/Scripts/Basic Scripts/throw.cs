@@ -8,6 +8,7 @@ public class Throw : MonoBehaviour
     RaycastHit2D hit;
     public float distance = 2f;
     public Transform holdpoint;
+    public float throwforce;
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.P))
@@ -23,7 +24,11 @@ public class Throw : MonoBehaviour
             }
             else
             {
-
+                grabbed = false;
+                if(hit.collider.gameObject.GetComponent<Rigidbody2D>()!=null)
+                {
+                    hit.collider.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x,1)*throwforce;
+                }
             }
         }
 
