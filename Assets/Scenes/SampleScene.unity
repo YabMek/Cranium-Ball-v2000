@@ -223,7 +223,7 @@ Transform:
   m_Children:
   - {fileID: 1266252292}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &225567774
 BoxCollider2D:
@@ -263,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef67ee0fc05e3dc4aac05d2dead2f1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   isGrounded: 0
   jump: {x: 0, y: 0}
   jumpForce: 2
@@ -399,7 +400,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509378856
 GameObject:
@@ -482,7 +483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565049027
 GameObject:
@@ -495,6 +496,7 @@ GameObject:
   - component: {fileID: 565049028}
   - component: {fileID: 565049030}
   - component: {fileID: 565049029}
+  - component: {fileID: 565049031}
   m_Layer: 0
   m_Name: JiaoStaff
   m_TagString: Untagged
@@ -509,13 +511,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565049027}
-  m_LocalRotation: {x: -0, y: -0, z: -0.31237733, w: 0.94995815}
-  m_LocalPosition: {x: 0.8556404, y: 0.098838806, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08915495, w: 0.9960178}
+  m_LocalPosition: {x: 0.6, y: 0.09883881, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1735338042}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -36.405003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10.23}
 --- !u!61 &565049029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -591,6 +593,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &565049031
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565049027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e78c52a91f64f6445b2780c2aa25c146, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &916727245
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +815,7 @@ GameObject:
   - component: {fileID: 1198755291}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -834,7 +855,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1198755289
 SpriteRenderer:
@@ -871,8 +892,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2015772493
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ebdc9656db50ec341b6b626fd9393ff6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -892,12 +913,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198755286}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 48.21, y: 76.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1198755291
 MonoBehaviour:
@@ -1033,6 +1054,7 @@ GameObject:
   - component: {fileID: 1735338040}
   - component: {fileID: 1735338044}
   - component: {fileID: 1735338045}
+  - component: {fileID: 1735338046}
   m_Layer: 0
   m_Name: JiaoFullBody
   m_TagString: Untagged
@@ -1163,6 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a67356eae07c54f8caf078f676ca9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1735338046}
   isGrounded: 0
   jump: {x: 0, y: 0}
   jumpForce: 2
@@ -1193,6 +1216,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.08, y: 1.92}
   m_EdgeRadius: 0
+--- !u!95 &1735338046
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735338039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1ac193d787c20b4c9714620e93fbcca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1855379492
 GameObject:
   m_ObjectHideFlags: 0

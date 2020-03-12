@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player1 : MonoBehaviour
 {
+    public Animator animator;
     private Rigidbody2D rigidBody;
     public static GameObject character;
 
@@ -36,6 +37,8 @@ public class Player1 : MonoBehaviour
        } else {
           rigidBody.AddForce(new Vector2(0, 0), ForceMode2D.Impulse); 
        }
+
+      
     }
 
     private void HandleMovement()
